@@ -40,3 +40,53 @@
 .read-the-docs {
   color: #888;
 }
+
+.articles-list{
+  max-width: 600px;
+  border-style: solid;
+  border-radius: 5px;
+  margin: 60px;
+  color: black;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+  padding: 0px;
+}
+
+.article-title-div {
+  border-bottom: solid;
+  border-radius: 5px;
+  padding: 0px;
+}
+
+.article-title-div:hover {
+  border-bottom: 2px solid orange;
+  color: orange
+}
+
+.app-heading{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: plum;
+  position: relative;
+  margin: 20px;
+}
+
+.article-info:hover {
+  color: orange;
+}
+
+.article-author {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.article-image{
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+}
+
+.article-votes {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
