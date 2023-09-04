@@ -90,3 +90,26 @@
   justify-content: flex-start;
   margin-left: 20px;
 }
+
+.article-body{
+  color: black;
+}
+
+.article-title-h2{
+  color: black;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.article-body{
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+}
+
+.single-article-image{
+  border-style: solid;
+  border-radius: 5px;
+}
