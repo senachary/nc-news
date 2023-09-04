@@ -8,3 +8,13 @@ export const fetchArticles = () => {
         })
     )
 }
+
+export const fetchSingleArticle = (article_id) => {
+    return (
+        axios.get(`https://sen-nc-news.onrender.com/api/articles/${article_id}`)
+            .then((res) => {
+                console.log(res)
+                return res.data.article
+        })
+    )
+}
