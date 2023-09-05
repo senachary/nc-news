@@ -4,14 +4,15 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
     return (
         <nav className="navigation">
-            Navigation
-        <div>
+            <div className="nav-elements">
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/topics">Topics</NavLink></li>
+                    <li><NavLink to="/users">Users</NavLink></li>
                 </ul>
-        </div>
+            </div>
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

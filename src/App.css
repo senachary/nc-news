@@ -114,3 +114,20 @@
   box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
   border-radius: 5px;
 }
+
+.nav-elements ul {
+  display: flex;
+  justify-content:space-around;
+  list-style-type: none;
+}
+
+.nav-elements ul li {
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav-elements ul li:hover {
+  background-color: #b2d5fd;
+
+}
