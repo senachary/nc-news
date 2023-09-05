@@ -1,8 +1,14 @@
-const ArticlesCard = ({articles}) => {
+import { Link } from "react-router-dom";
+
+const ArticlesCard = ({ articles }) => {
     return (
         <div className="articles-list">
             <div className="article-title-div">
-                <h2 className="article-title-h2">{articles.title}</h2>
+                    <Link to={`/articles/${articles.article_id}`}>
+                    <h2 className="article-title-h2">
+                    {articles.title}
+                    </h2>
+                    </Link>
                 <p className="article-author">/u/{articles.author}</p>
                 <p className="article-votes">{articles.votes} votes</p>
             </div>

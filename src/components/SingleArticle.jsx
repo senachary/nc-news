@@ -30,7 +30,7 @@ const SingleArticle = () => {
     return (
         <section>
             {isLoading ? (
-                <p>Loading...</p>
+                <p>Loading post...</p>
             ) : (
             <>
                 <div className="article-body">
