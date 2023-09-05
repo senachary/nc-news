@@ -41,36 +41,24 @@
   color: #888;
 }
 
-.articles-list{
+.articles-list {
   max-width: 600px;
-  border-style: solid;
   border-radius: 5px;
   margin: 60px;
-  color: black;
   box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
   padding: 0px;
 }
 
 .article-title-div {
-  border-bottom: solid;
   border-radius: 5px;
   padding: 0px;
 }
 
-.article-title-div:hover {
-  border-bottom: 2px solid orange;
-  color: orange
-}
-
-.app-heading{
-  font-family:Georgia, 'Times New Roman', Times, serif;
+.app-heading {
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: plum;
   position: relative;
   margin: 20px;
-}
-
-.article-info:hover {
-  color: orange;
 }
 
 .article-author {
@@ -79,7 +67,7 @@
   margin-right: 20px;
 }
 
-.article-image{
+.article-image {
   width: 200px;
   height: 200px;
   margin: 30px;
@@ -91,25 +79,38 @@
   margin-left: 20px;
 }
 
-.article-body{
-  color: black;
-}
-
-.article-title-h2{
-  color: black;
-  border-style: solid;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.article-body{
-  border-style: solid;
+.article-title-h2 {
   border-radius: 5px;
   padding: 10px;
   box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
 }
 
-.single-article-image{
-  border-style: solid;
+.article-title-h2:hover {
+  color: orange;
+  text-shadow: 1.5px 3px 5px rgba(255, 223, 154, 0.897);
+}
+
+.article-body {
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+}
+
+#single-article-image {
+  border-radius: 5px;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.comment-author {
+  padding-left: 10px;
+}
+
+.comment-div {
+  display: flexbox;
+  align-self: center;
+  margin: 5px;
+  max-width: 750px;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
   border-radius: 5px;
 }

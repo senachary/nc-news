@@ -18,3 +18,12 @@ export const fetchSingleArticle = (article_id) => {
         })
     )
 }
+
+export const fetchComments = (article_id) => {
+    return (
+        axios.get(`https://sen-nc-news.onrender.com/api/articles/${article_id}/comments`)
+            .then((res) => {
+                return res.data.comments
+            })
+    )
+}

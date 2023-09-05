@@ -1,13 +1,15 @@
 import ArticlesCard from "./ArticlesCard"
 import { useEffect, useState } from "react"
 import * as api from "../api"
+import { Link } from "react-router-dom"
 
 const ArticlesList = () => {
     const [articles, setArticles] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         api.fetchArticles().then(data => {
-            console.log(data.articles)
+            setIsLoading(false)
             setArticles(data.articles)
         })
             .catch((err) => {
@@ -17,9 +19,13 @@ const ArticlesList = () => {
 
     return (
         <section>
+            {isLoading ? (<p>Loading posts... </p>) : (
+            <>
             {articles.map(article => {
                 return <ArticlesCard key={article.article_id} articles={article}/>
             })}
+            </>
+            )}
         </section>
     )
 }
