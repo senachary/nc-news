@@ -43,22 +43,19 @@
 
 .articles-list{
   max-width: 600px;
-  border-style: solid;
   border-radius: 5px;
   margin: 60px;
-  color: black;
   box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
   padding: 0px;
 }
 
 .article-title-div {
-  border-bottom: solid;
   border-radius: 5px;
   padding: 0px;
 }
 
 .article-title-div:hover {
-  border-bottom: 2px solid orange;
+  border-bottom: 2px orange;
   color: orange
 }
 
@@ -91,25 +88,31 @@
   margin-left: 20px;
 }
 
-.article-body{
-  color: black;
-}
-
 .article-title-h2{
-  color: black;
-  border-style: solid;
   border-radius: 5px;
   padding: 10px;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
 }
 
 .article-body{
-  border-style: solid;
   border-radius: 5px;
   padding: 10px;
   box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
 }
 
 .single-article-image{
-  border-style: solid;
+  border-radius: 5px;
+}
+
+.comment-author{
+  padding-left: 10px;
+}
+
+.comment-div {
+  display: flexbox;
+  flex: content;
+  margin: 5px;
+  max-width: 750px;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
   border-radius: 5px;
 }

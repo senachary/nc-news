@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import * as api from "../api";
+import CommentsCard from "./CommentsCard";
 
 const SingleArticle = () => {
     const { article_id } = useParams();
     const [article, setArticle] = useState({});
-    const [isLoading, setIsLoading] = useState(true)
+    const [comments, setComments] = useState([]); 
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         api.fetchSingleArticle(article_id).then((article) => {
@@ -13,9 +15,17 @@ const SingleArticle = () => {
             setArticle(article);
         })
         .catch((err) => {
-            console.log(err)
-        })
-    }, [])
+                console.log(err)
+            });
+        
+        api.fetchComments(article_id).then(comments => {
+                setIsLoading(false)
+                setComments(comments)
+            })
+        .catch((err) => {
+                console.log(err)
+            })
+    }, [article_id])
 
     return (
         <section>
@@ -23,10 +33,15 @@ const SingleArticle = () => {
                 <p>Loading...</p>
             ) : (
             <>
-            <h2 className="article-title-h2">{article.title}</h2>
-            <div className="article-body">
+                <div className="article-body">
+                <h2>{article.title}</h2>
                 <p>{article.body}</p>
                 <img src={article.article_img_url} alt="" id="single-article-image"/>
+                        </div>
+            <div>
+                {comments.map(comment => {
+                    return <CommentsCard comments={comment} key={comment.created_at}/>
+                 })}
             </div>
             </>
             )}
