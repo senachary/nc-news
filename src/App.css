@@ -131,3 +131,8 @@
   background-color: #b2d5fd;
 
 }
+
+.like-button {
+  background-color: white;
+  position: relative;
+}

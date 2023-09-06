@@ -8,11 +8,13 @@ const SingleArticle = () => {
     const [article, setArticle] = useState({});
     const [comments, setComments] = useState([]); 
     const [isLoading, setIsLoading] = useState(true);
+    const [voteCount, setVoteCount] = useState(0)
 
     useEffect(() => {
         api.fetchSingleArticle(article_id).then((article) => {
             setIsLoading(false);
             setArticle(article);
+            setVoteCount(article.votes)
         })
         .catch((err) => {
                 console.log(err)
@@ -27,6 +29,19 @@ const SingleArticle = () => {
             })
     }, [article_id])
 
+    const handVoteClick = () => {
+        setVoteCount(prevVoteCount => prevVoteCount + 1)
+        
+        const newVote = voteCount + 1;
+        api.patchArticle(article_id, newVote)
+            .then(updatedVoteCount => {
+            setVoteCount(updatedVoteCount)
+            })
+            .catch((err) => {
+            console.log(err)
+        })
+    }
+
     return (
         <section>
             {isLoading ? (
@@ -34,10 +49,12 @@ const SingleArticle = () => {
             ) : (
             <>
                 <div className="article-body">
-                <h2>{article.title}</h2>
-                <p>{article.body}</p>
-                <img src={article.article_img_url} alt="" id="single-article-image"/>
-                        </div>
+                    <h2>{article.title}</h2>
+                    <p>{article.body}</p>
+                    <img src={article.article_img_url} alt="" id="single-article-image"/>
+                    <p className="article-votes">{voteCount} votes</p>
+                    <button className="vote-button" onClick={handVoteClick}>👍</button>
+                </div>
             <div>
                 {comments.map(comment => {
                     return <CommentsCard comments={comment} key={comment.created_at}/>

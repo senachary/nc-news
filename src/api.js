@@ -35,3 +35,14 @@ export const fetchTopics = () => {
         })
     )
 }
+
+export const patchArticle = (article_id, newVote) => {
+    return (
+        axios.patch(`https://sen-nc-news.onrender.com/api/articles/${article_id}`, {
+            inc_votes: newVote
+        })
+            .then((res) => {
+            return res.data.article.votes
+        })
+    )
+}
