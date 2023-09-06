@@ -10,10 +10,12 @@ const ArticlesCard = ({ articles }) => {
                     </h2>
                     </Link>
                 <p className="article-author">/u/{articles.author}</p>
-                <p className="article-votes">{articles.votes} votes</p>
             </div>
             <div>
                 <img src={articles.article_img_url} alt="" className="article-image"/>
+            </div>
+            <div className="votes-likes">
+                <p className="article-votes">{articles.votes} votes</p>
             </div>
             <p className="article-info">{articles.topic}</p>
             <p className="article-info">{articles.comment_count} comments</p>
