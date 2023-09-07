@@ -156,3 +156,20 @@
   flex-direction: column-reverse;
   margin: 20px;
 }
+
+.topic-name {
+  padding: 10px;
+}
+
+.topic-name li{
+  list-style-type: none;
+}
+
+.topic-card {
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+
+}
+
+.topic-desc {
+  padding: 10px;
+}
