@@ -3,11 +3,13 @@ import * as api from "../api"
 import { useEffect, useState } from "react";
 
 const TopicsList = () => {
-    const [topics, setTopics] = useState([])
+    const [topics, setTopics] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        api.fetchTopics().then(data => {
-            setTopics(data.topics);
+        api.fetchTopics().then(({data}) => {
+            setIsLoading(false);
+            setTopics(data);
         })
             .catch((err) => {
                 console.log(err)
@@ -16,14 +18,13 @@ const TopicsList = () => {
 
     return (
         <section>
-            <h2>Topics: </h2>
-            <TopicsCard />
-            {topics}
+            {isLoading ? (<p>Loading topics... </p>) : (
             <ul>
-                {/* {topics.map(topic => {
-                    return <TopicsCard key={topic} topic={topics} />
-                })} */}
+            {topics.map(topic => (
+                    <TopicsCard key={topic.slug} topic={topic} />
+                ))}
             </ul>
+            )}
         </section>
     );
 };

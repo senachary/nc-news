@@ -30,7 +30,7 @@ export const fetchComments = (article_id) => {
 export const fetchTopics = () => {
     return (
         axios.get("https://sen-nc-news.onrender.com/api/topics")
-            .then(({data}) => {
+            .then((data) => {
             return data
         })
     )
@@ -43,6 +43,9 @@ export const patchArticle = (article_id, newVote) => {
         })
             .then((res) => {
             return res.data.article.votes
+            })
+            .catch(err => {
+            console.log(err)
         })
     )
 }
