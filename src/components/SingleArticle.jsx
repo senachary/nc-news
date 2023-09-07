@@ -9,6 +9,7 @@ const SingleArticle = () => {
     const [comments, setComments] = useState([]); 
     const [isLoading, setIsLoading] = useState(true);
     const [voteCount, setVoteCount] = useState(0)
+    const [newComment, setNewComment] = useState("")
 
     useEffect(() => {
         api.fetchSingleArticle(article_id).then((article) => {
@@ -42,6 +43,17 @@ const SingleArticle = () => {
         })
     }
 
+    const handleCommentChange = (e) => {
+        setNewComment(e.target.value)
+    }
+
+    const handleCommentSubmit = (e) => {
+        e.preventDefault()
+        const updatedComments = [newComment, ...comments] //place newcomment at top of list
+        setComments(updatedComments)
+        setNewComment("")
+    }
+
     return (
         <section>
             {isLoading ? (
@@ -54,7 +66,18 @@ const SingleArticle = () => {
                     <img src={article.article_img_url} alt="" id="single-article-image"/>
                     <p className="article-votes">{voteCount} votes</p>
                     <button className="vote-button" onClick={handVoteClick}>👍</button>
-                </div>
+                        </div>
+                        <section>
+                            <div className="comment-post-div">
+                                <form method="post" onSubmit={handleCommentSubmit}>
+                                    <textarea id="comment-form" rows="10" placeholder="Post comment..."
+                                        value={newComment}
+                                        onChange={handleCommentChange}
+                                    ></textarea>
+                                    <button className="comment-button">Reply</button>
+                                </form>
+                            </div>
+                        </section>
             <div>
                 {comments.map(comment => {
                     return <CommentsCard comments={comment} key={comment.created_at}/>

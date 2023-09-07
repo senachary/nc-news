@@ -136,3 +136,23 @@
   background-color: white;
   position: relative;
 }
+
+.comment-button {
+  color: black;
+  background-color: white;
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+  margin: 20px;
+}
+
+#comment-form{
+  color: black;
+  background-color: white;
+  width: 750px;
+  height: auto;
+}
+
+.comment-post-div {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 20px;
+}
