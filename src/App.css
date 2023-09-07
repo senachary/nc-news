@@ -33,6 +33,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    text-align: center;
+  }
+}
+
 .card {
   padding: 2em;
 }

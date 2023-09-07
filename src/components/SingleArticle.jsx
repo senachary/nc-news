@@ -49,7 +49,16 @@ const SingleArticle = () => {
 
     const handleCommentSubmit = (e) => {
         e.preventDefault()
-        const updatedComments = [newComment, ...comments] //place newcomment at top of list
+        
+        const newCommentObj = {
+            comment_id: Math.random(),
+            body: newComment,
+            article_id: article_id,
+            votes: 0,
+            created_at: Date.now()
+        }
+        
+        const updatedComments = [newCommentObj, ...comments] //place newcomment at top of list
         setComments(updatedComments)
         setNewComment("")
     }
@@ -80,7 +89,7 @@ const SingleArticle = () => {
                         </section>
             <div>
                 {comments.map(comment => {
-                    return <CommentsCard comments={comment} key={comment.created_at}/>
+                    return <CommentsCard comments={comment} key={comment.comment_id}/>
                  })}
             </div>
             </>
