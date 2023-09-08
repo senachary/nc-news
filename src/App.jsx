@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import ArticlesList from './components/ArticlesList'
 import SingleArticle from './components/SingleArticle'
 import TopicsList from './components/TopicsList'
+import SingleTopic from './components/SingleTopic'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path='/' element={<ArticlesList />} />
         <Route path='/articles/:article_id' element={<SingleArticle />} />
         <Route path='/topics' element={<TopicsList />} />
+        <Route path='/topics/:slug' element={<SingleTopic/>}></Route>
         </Routes>
       </div>
   )

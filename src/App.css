@@ -179,3 +179,16 @@
 .topic-desc {
   padding: 10px;
 }
+
+.single-topic-h2 {
+  color: #747bff;
+  margin-top: 50px;
+}
+
+.sort-by-button {
+  box-shadow: 3px 6px 10px rgba(184, 184, 184, 0.897);
+  background-color: white;
+  color: #747bff;
+  font-weight: bold;
+  margin: 10px;
+}
